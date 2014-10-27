@@ -1,0 +1,104 @@
+@font-face 
+{
+    font-family: 'deja_vu';
+    src: url('../fonts/deja_vu.eot');
+    src: url('../fonts/deja_vu?#iefix') format('embedded-opentype'),
+         url('../fonts/deja_vu.woff') format('woff'),
+         url('../fonts/deja_vu.ttf') format('truetype'),
+         url('../fonts/deja_vu.svg#deja_vu') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body
+{
+  font-family:     "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", monospace;
+  background-image: url(../img/sky.jpg);
+  background-position:right top;
+  margin:0px;
+  padding:0px;
+}
+
+.fl 
+{
+  font-family:    "deja_vu";
+  font-size:      5.2em;
+  float:          left;
+  margin-right:   0.02em;
+  margin-top:     -36px;
+ }
+
+.footer
+{
+
+
+opacity:0.2;
+}
+
+.icon_wrapper
+{
+  display:flex;
+  background-color: white;
+
+}
+
+.icon_item
+{
+}
+
+#footer_img_left
+{
+  position:absolute;
+  float:left;
+  left:0;
+  bottom:0;
+  width:20%;
+  margin-left:4%;
+}
+#footer_img_right
+{
+  position:absolute;
+  right:0;
+  bottom:0;
+  width:40%;
+}
+
+#todoNumbers
+{
+  position:absolute;
+  bottom:-15px;
+  margin-left:11%;
+}
+#emailNumbers
+{
+  position:absolute;
+  bottom:-15px;
+  margin-left:11%;
+}
+
+.intro_wrapper
+{
+  padding:3%;
+  margin:4%;
+  background-color: white;
+  width:40%;
+  border-radius:16px;
+  opacity:0.8;
+}
+.menu_panel
+{
+  background-color: #EBEBEB;
+  padding:1.25%;
+  display:flex;
+
+}
+.menu_item
+{
+  flex: 1;
+  margin-left:4%;
+
+}
+.menu_panel a
+{
+    text-decoration: none
+}

@@ -30,8 +30,6 @@ body
 
 .footer
 {
-
-
 opacity:0.2;
 }
 
@@ -42,9 +40,6 @@ opacity:0.2;
 
 }
 
-.icon_item
-{
-}
 
 #footer_img_left
 {
@@ -101,4 +96,16 @@ opacity:0.2;
 .menu_panel a
 {
     text-decoration: none
+}
+
+.contents
+{
+  margin-left:4%;
+}
+.panel
+{
+  padding:1%;
+  background-color:white;
+  width:40%;
+  border-radius:8px;
 }

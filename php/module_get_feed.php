@@ -3,6 +3,7 @@
 // it takes an argument of a url of a valid site that serves xml
 // copyright 2014 intheon
 $entries = array();
+$count = 0;
 
 if (isset($_POST['website']))
 {
@@ -16,11 +17,15 @@ if (isset($_POST['website']))
 	{
 		$entries = array_merge($entries, $xml->xpath("//item"));
 	}
+
 	// i get back an object
 	// the above loops through, and merges each entry onto an empty array
 	// the magic is in the xpath, it digs into the xml and grabs only those elements and children
 }
 
-echo json_encode($entries);
+$chopped = array_slice($entries,0,7);
+
+echo json_encode($chopped);
+//echo count($entries);
 // give it back to js
 ?>

@@ -3,6 +3,7 @@
 // ****************
 	var links = [
 		"<a href='index.html'>home</a>",
+		"<a href='news.html'>news</a>",
 		"<a href='mail.html'>mail</a>",
 		"<a href='entertainment.html'>entertainment</a>",
 		"<a href='workout.html'>workout</a>",
@@ -17,7 +18,11 @@
 
 	function detectChanges(changes)
 	{
-		$("#"+changes[0].name).append(xmlResponses[changes[0].name]);
+		var obj = JSON.parse(xmlResponses[changes[0].name]);
+		for (keys in obj)
+		{
+			$("#"+changes[0].name).append("<p><a href='"+obj[keys].link+"' target='_blank'>"+obj[keys].title+"</p></a>");
+		}
 	}
 
 
@@ -32,9 +37,9 @@
 			data: {
 				website: websiteUrl
 			},
-
 			success: function(response)
 			{
+				//console.log(response);
 				xmlResponses[tag] = response
 			}
 		});
@@ -48,12 +53,24 @@
 // the response does get put in it's own object
 // it even has a listener to perform a callback (function) when it changes!
 
+
 // **************
 // INITIALISATION
 // **************
 $( document ).ready(function(){
 	getFeed("http://www.gamespot.com/feeds/reviews/","gamespot");
 	getFeed("http://feeds.bbci.co.uk/news/technology/rss.xml","bbc");
-});
 
+	$("#addMoreButton").click(function(){
+		var obj = {};
+		var count = 0;
+		var newTask = $("#addMoreText").val();
+			count++
+
+			obj["item"+count] = newTask;
+
+			localStorage.setItem("tasks",obj);
+			$(".toDoList").append("<p>"+newTask+"</p>");
+	});
+});
 

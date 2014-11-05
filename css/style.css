@@ -1,18 +1,7 @@
-@font-face 
-{
-    font-family: 'deja_vu';
-    src: url('../fonts/deja_vu.eot');
-    src: url('../fonts/deja_vu?#iefix') format('embedded-opentype'),
-         url('../fonts/deja_vu.woff') format('woff'),
-         url('../fonts/deja_vu.ttf') format('truetype'),
-         url('../fonts/deja_vu.svg#deja_vu') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
 body
 {
-  font-family:     "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", monospace;
-  background-image: url(../img/sky.jpg);
+  font-family: 'Titillium Web', sans-serif;
+    background-image: url(../img/sky.jpg);
   background-position:right top;
   background-attachment: fixed;
   margin:0px;
@@ -43,8 +32,9 @@ opacity:0.2;
 .icon_wrapper
 {
   display:flex;
-  background-color: white;
-
+  background-color: #393D4C;
+  border-bottom:2px solid;
+  border-color:#63646A;
 }
 
 #todoNumbers
@@ -71,15 +61,27 @@ opacity:0.2;
 }
 .menu_panel
 {
-  background-color: #EBEBEB;
-  padding:1.25%;
+  background-color: #101526;
   display:flex;
+  border-bottom:2px solid;
+  border-color:#041122;
 }
 .menu_item
 {
   flex: 1;
-  margin-left:4%;
-
+  text-align: center;
+  color:#50526B;
+  height:100%;
+  position:relative;
+  z-index:5;
+  padding:1.1%;
+  margin:0;
+}
+.menu_item:hover
+{
+  background-color:#361D36;
+  color:#662A68;
+  cursor:pointer;
 }
 a
 {
@@ -165,6 +167,7 @@ a
   font-size:0.87em;
   padding-left:1%;
   padding-right:1%;
+  font-family:     "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", monospace;
 }
 .smallico
 {

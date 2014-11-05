@@ -14,8 +14,10 @@ body
   font-family:     "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", monospace;
   background-image: url(../img/sky.jpg);
   background-position:right top;
+  background-attachment: fixed;
   margin:0px;
   padding:0px;
+  overflow:hidden;
 }
 
 h1,h2,h3,p
@@ -91,6 +93,7 @@ a
   padding:1em;
   float:left;
   width:62%;
+  min-height:750px;
   color:black;
   background-color:#E7E7E6 !important;
   border-radius: 8px;
@@ -184,5 +187,18 @@ a
   color:#C08000;
   font-weight:none;
   font-size:1.05em;
+}
+#navi
+{
+  position:fixed;
+  width:100%;
+  -webkit-transform: translate3d(0,0,0);
+  z-index:2;
+}
+.contentAreas
+{
+  float:left;
+  position:relative;
+  margin-top:200px;
 }
 

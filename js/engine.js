@@ -2,11 +2,11 @@
 // VIEW CONTROLLERS
 // ****************
 	var links = [
-		"<a href='index.html'>home</a>",
-		"<a href='news.html'>news</a>",
-		"<a href='mail.html'>mail</a>",
-		"<a href='entertainment.html'>entertainment</a>",
-		"<a href='workout.html'>workout</a>",
+		"<span id='#homeArea'>home</span>",
+		"<span id='#newsArea'>news</span>",
+		"<span id='#mailArea'>mail</span>",
+		"<span id='#entertainmentArea'>entertainment</span>",
+		"<span id='#workoutArea'>workout</span>",
 	];
 
 	for (i = 0; i <= links.length - 1; i++)
@@ -157,6 +157,7 @@
 $( document ).ready(function(){
 	getFeed("http://www.gamespot.com/feeds/reviews/","gamespot",6);
 	getFeed("http://feeds.bbci.co.uk/news/technology/rss.xml","bbc",7);
+	getFeed("http://feeds.bbci.co.uk/news/technology/rss.xml","bbc",7);
 	getFeed("http://feeds.sydv.net/latest-bash-quotes","bash",1);
 	
 	getTasks();
@@ -168,6 +169,17 @@ $( document ).ready(function(){
 
 	$("#todo").click(function(){
 		$(".left_side_panel").slideToggle("slow");
+	});
+
+	$(".menu_panel span").click(function(event){
+		var blah = $(event.currentTarget.id).offset().top;
+			blah -= 150;
+		$("html, body").animate({
+			scrollTop: blah
+		},1000);
+
+		console.log($(event.currentTarget.id).offset());
+		//console.log(event.currentTarget.id);
 	});
 });
 

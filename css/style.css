@@ -18,6 +18,12 @@ body
   padding:0px;
 }
 
+h1,h2,h3,p
+{
+  margin:0;
+  padding:0;
+}
+
 .fl 
 {
   font-family:    "deja_vu";
@@ -86,16 +92,17 @@ a
   float:left;
   width:62%;
   color:black;
-  background-color:#EDEBFF;
+  background-color:#E7E7E6 !important;
   border-radius: 8px;
   border:2px solid;
-  border-color:#A4A3AF;
+  border-color:#A1A1A1;
 }
 .area h1
 {
   margin:0;
   color:#535268;
   font-weight:normal;
+  margin-bottom:3%;
 }
 .area h2
 {
@@ -106,6 +113,9 @@ a
 .area p
 {
   font-size:1.05em;
+  margin-top:2%;
+  margin-bottom:2%;
+  line-height:26px;
 }
 .panel
 {
@@ -147,9 +157,32 @@ a
 {
   width:87%;
 }
-.emphasis
+.quote
 {
   font-size:0.87em;
   padding-left:1%;
   padding-right:1%;
 }
+.smallico
+{
+  float:right;
+}
+.quote
+{
+  margin-top:1%;
+  padding:2%;
+  margin-right:7%;
+  width:auto;
+  background-color:#F5F5F5;
+  border-radius: 8px;
+  border: 1px dashed;
+  border-color:#E5E5E5;
+  line-height:22px;
+}
+.quote h3
+{
+  color:#C08000;
+  font-weight:none;
+  font-size:1.05em;
+}
+

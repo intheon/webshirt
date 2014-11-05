@@ -11,7 +11,7 @@
 <body>
 
 <div class="icon_wrapper">
-	<div class="icon_item">
+	<div class="icon_item" id="todo">
 		<span id="todoNumbers" class="numbers">3</span>
 		<img src="img/todo.png" width="50%">
 	</div>
@@ -23,13 +23,16 @@
 
 <div class="menu_panel"></div>
 
+<div class="left_side_panel" style="display:none">
+	<h2 class="toDoList">To Do</h2>
+	<form name="addMore">
+		<input type="text" placeholder="Add More" id="addMoreText"/><br />
+		<input type="button" value="Submit" id="addMoreButton"/ >
+	</form>
+</div>
+
 <div class="contents">
-	<div class="panel" id="gamespot">
-		<h1>Gamespot</h1>
-	</div>
-	<div class="panel" id="bbc">
-		<h1>BBC</h1>
-	</div>
+
 </div>
 
 

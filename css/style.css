@@ -9,7 +9,6 @@
     font-weight: normal;
     font-style: normal;
 }
-
 body
 {
   font-family:     "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", monospace;
@@ -40,24 +39,6 @@ opacity:0.2;
 
 }
 
-
-#footer_img_left
-{
-  position:absolute;
-  float:left;
-  left:0;
-  bottom:0;
-  width:20%;
-  margin-left:4%;
-}
-#footer_img_right
-{
-  position:absolute;
-  right:0;
-  bottom:0;
-  width:40%;
-}
-
 #todoNumbers
 {
   position:absolute;
@@ -85,7 +66,6 @@ opacity:0.2;
   background-color: #EBEBEB;
   padding:1.25%;
   display:flex;
-
 }
 .menu_item
 {
@@ -97,27 +77,53 @@ a
 {
     text-decoration: none
 }
-
-.contents
+.area
 {
-  margin-left:4%;
+  margin-left:33%;
+  margin-right:3%;
+  margin-top:3%;
+  padding:1em;
+  float:left;
+  width:62%;
+  color:black;
+  background-color:#EDEBFF;
+  border-radius: 8px;
+  border:2px solid;
+  border-color:#A4A3AF;
+}
+.area h1
+{
+  margin:0;
+  color:#535268;
+  font-weight:normal;
+}
+.area h2
+{
+  font-size:1.15em;
+  text-align: center;
+  color:#30426E;
+}
+.area p
+{
+  font-size:1.05em;
 }
 .panel
 {
-  padding:1%;
-  margin:1%;
-  background-color:white;
-  width:40%;
-  border-radius:8px;
+  padding-left:1%;
+  padding-right:1%;
+  width:31%;
+  float:left;
 }
-.panel h1
+.panel p
 {
-  text-align: center;
+  padding:0%;
+  margin-bottom:0.3%;
+  font-size:0.77em;
 }
 .left_side_panel
 {
   height:100%;
-  width:15%;
+  width:30%;
   background-color:white;
   float:left;
   position:fixed;
@@ -140,4 +146,10 @@ a
 .left_side_panel input[type="button"]
 {
   width:87%;
+}
+.emphasis
+{
+  font-size:0.87em;
+  padding-left:1%;
+  padding-right:1%;
 }

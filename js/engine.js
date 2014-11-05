@@ -18,10 +18,19 @@
 
 	function detectChanges(changes)
 	{
+
 		var obj = JSON.parse(xmlResponses[changes[0].name]);
-		for (keys in obj)
+
+		if (changes[0].name == "bash")
 		{
-			$("#"+changes[0].name).append("<p><a href='"+obj[keys].link+"' target='_blank'>"+obj[keys].title+"</p></a>");
+			$("#"+changes[0].name).append("<p>"+obj[0].description+"</p>");
+		}
+		else
+		{
+			for (keys in obj)
+			{
+				$("#"+changes[0].name).append("<p><a href='"+obj[keys].link+"' target='_blank'>"+obj[keys].title+"</p></a>");
+			}
 		}
 	}
 
@@ -29,13 +38,15 @@
 // *********
 // RSS MODEL
 // *********
-	function getFeed(websiteUrl,tag)
+	function getFeed(websiteUrl,tag,limit)
 	{
 		$.ajax({
 			url: "http://localhost/webshirt/php/module_get_feed.php",
 			type: "POST",
 			data: {
-				website: websiteUrl
+				website: websiteUrl,
+				quant: limit,
+				tagline: tag
 			},
 			success: function(response)
 			{
@@ -144,9 +155,10 @@
 // INITIALISATION
 // **************
 $( document ).ready(function(){
-	getFeed("http://www.gamespot.com/feeds/reviews/","gamespot");
-	getFeed("http://feeds.bbci.co.uk/news/technology/rss.xml","bbc");
-
+	getFeed("http://www.gamespot.com/feeds/reviews/","gamespot",6);
+	getFeed("http://feeds.bbci.co.uk/news/technology/rss.xml","bbc",7);
+	getFeed("http://feeds.sydv.net/latest-bash-quotes","bash",1);
+	
 	getTasks();
 
 	$("#addMoreButton").click(function(){

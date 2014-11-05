@@ -11,7 +11,7 @@
 <body>
 
 <div class="icon_wrapper">
-	<div class="icon_item">
+	<div class="icon_item" id="todo">
 		<span id="todoNumbers" class="numbers">3</span>
 		<img src="img/todo.png" width="50%">
 	</div>
@@ -24,18 +24,20 @@
 
 <div class="menu_panel"></div>
 
+<div class="left_side_panel" style="display:none">
+	<h2 class="toDoList">To Do</h2>
+	<form name="addMore">
+		<input type="text" placeholder="Add More" id="addMoreText"/><br />
+		<input type="button" value="Submit" id="addMoreButton"/ >
+	</form>
+</div>
+
 <div class="intro_wrapper">
 	<p>How about some YouTube?</p>
 </div>
 
 <div class="content_item"></div>
 
-
-
-<div class="footer">
-    <img src="img/tree1.png" id="footer_img_left">
-    <img src="img/tree2.png" id="footer_img_right">
-</div>
 
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/engine.js"></script>

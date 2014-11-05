@@ -61,19 +61,14 @@
 		listTasks(changes);
 	});
 
-	function getTasks(lim)
+	function getTasks()
 	{
-
 		$.ajax({
 			url: "http://localhost/webshirt/php/module_pull_tasks.php",
 			type: "GET",
-			data: {
-				isLim: lim 
-			},
 			success: function(response)
 			{
-				console.log(response);
-				//tasks.todo = JSON.parse(response);
+				tasks.todo = JSON.parse(response);
 			}
 		});
 	}
@@ -82,14 +77,40 @@
 	{
 		// 'changes' tells us the new stuff
 		//console.log(changes);
-
-		for(i=0;i<=tasks.todo.length-1;i++)
+		if (changes[0].type == "update")
 		{
-			$(".toDoList").append("<p>"+tasks.todo[i].task+"</p>")
+			var newObj = changes[0].object.todo[changes[0].object.todo.length-1];
+			$(".toDoList").append("<p>\
+				"+newObj.task+"\
+				<span class='deleteIcon' id='del_"+newObj.id+"'>x</span>\
+				</p>");
+			$("#del_"+newObj.id).click(function(){
+				// remove from db
+				deleteRecord(this.id);
+				// remove it from the dom so i cant see it!
+				this.parentElement.remove();
+			});
+		}
+		else
+		{
+			for(i=0;i<=tasks.todo.length-1;i++)
+				{
+					$(".toDoList").append("<p>\
+						"+tasks.todo[i].task+"\
+						<span class='deleteIcon' id='del_"+tasks.todo[i].id+"'>x</span>\
+						</p>");
+					// add listeners for each
+					$("#del_"+tasks.todo[i].id).click(function(){
+						// remove from db
+						deleteRecord(this.id);
+						// remove it from the dom so i cant see it!
+						this.parentElement.remove();
+					});
+				}	
 		}
 	}
 
-	function createTask(newText,lim)
+	function createTask(newText)
 	{
 		$.ajax({
 			url: "http://localhost/webshirt/php/module_push_tasks.php",
@@ -100,7 +121,20 @@
 			success: function(response)
 			{
 				//console.log(response);
-				getTasks(lim);
+				getTasks();
+			}
+		});
+	}
+
+	function deleteRecord(id)
+	{
+		var stripped = id.substr(4,id.length);
+
+		$.ajax({
+			url: "http://localhost/webshirt/php/module_delete_tasks.php",
+			type: "POST",
+			data: { 
+				idToDelete: stripped
 			}
 		});
 	}
@@ -113,13 +147,19 @@ $( document ).ready(function(){
 	getFeed("http://www.gamespot.com/feeds/reviews/","gamespot");
 	getFeed("http://feeds.bbci.co.uk/news/technology/rss.xml","bbc");
 
-	getTasks(false,false);
+	getTasks();
 
 	$("#addMoreButton").click(function(){
 		var newTask = $("#addMoreText").val();
 			createTask(newTask,true);
 	});
+
+	$("#todo").click(function(){
+		$(".left_side_panel").slideToggle("slow");
+	});
 });
+
+
 
 
 

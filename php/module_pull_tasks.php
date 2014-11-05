@@ -7,34 +7,19 @@ $usr = 'root';
 $pw = '';
 $con = mysqli_connect($host,$usr,$pw,$db);
 
-if (isset($_GET['isLim']))
-{
 	$json = array();
 
-	$lim = $_GET['isLim'];
+	$data = mysqli_query($con,'SELECT * FROM todo');
 
-	echo $lim;
-
-	if ($lim == false)
+	while($r = mysqli_fetch_assoc($data))
 	{
-		$data = mysqli_query($con,'SELECT * FROM todo');
-
-		while($r = mysqli_fetch_assoc($data))
-		{
 		$json[] = $r;
-		}
+	}
 	
-		echo json_encode($json);
-	}
-	else if ($lim ==  true)
-	{
-		$data = mysqli_query($con,'SELECT task FROM todo ORDER BY id DESC LIMIT 0, 1');
-	}
-
-}
+	echo json_encode($json);
 
 
-
+// 		$data = mysqli_query($con,'SELECT task FROM todo ORDER BY id DESC LIMIT 0, 1');
 
 mysqli_close($con);
 

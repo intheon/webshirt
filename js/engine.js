@@ -157,7 +157,6 @@
 $( document ).ready(function(){
 	getFeed("http://www.gamespot.com/feeds/reviews/","gamespot",6);
 	getFeed("http://feeds.bbci.co.uk/news/technology/rss.xml","bbc",7);
-	getFeed("http://feeds.bbci.co.uk/news/technology/rss.xml","bbc",7);
 	getFeed("http://feeds.sydv.net/latest-bash-quotes","bash",1);
 	
 	getTasks();
@@ -168,19 +167,36 @@ $( document ).ready(function(){
 	});
 
 	$("#todo").click(function(){
+  		if ($(".left_side_panel").is(":hidden")) 
+  		{
+     		console.log("showing");
+     		$(".menu_panel").addClass("fade");
+     		$(".menu_panel").removeClass("shown");
+  		} 
+  		else 
+  		{
+     		console.log("hidden");
+     		$(".menu_panel").removeClass("fade");
+     		$(".menu_panel").addClass("shown");
+     	}
 		$(".left_side_panel").slideToggle("slow");
+
 	});
 
 	$(".menu_panel span").click(function(event){
-		var blah = $(event.currentTarget.id).offset().top;
-			blah -= 150;
-		$("html, body").animate({
-			scrollTop: blah
-		},1000);
-
-		console.log($(event.currentTarget.id).offset());
-		//console.log(event.currentTarget.id);
+		var amount = $(event.currentTarget.id).offset().top;
+			amount -= 150;
+			$("html, body").animate({
+				scrollTop: amount
+			},1000);
 	});
+
+
+setTimeout(function(){
+	var o = tasks.todo.length;
+	$("#todoNumbers").html(o)
+},100);
+
 });
 
 

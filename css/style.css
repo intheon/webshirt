@@ -1,7 +1,7 @@
 body
 {
   font-family: 'Titillium Web', sans-serif;
-    background-image: url(../img/sky.jpg);
+  background-image: url(../img/sky.jpg);
   background-position:right top;
   background-attachment: fixed;
   margin:0px;
@@ -35,19 +35,18 @@ opacity:0.2;
   background-color: #393D4C;
   border-bottom:2px solid;
   border-color:#63646A;
+  padding:0.6%;
 }
-
-#todoNumbers
+.icon_item:hover
 {
-  position:absolute;
-  bottom:-15px;
-  margin-left:11%;
+  cursor:pointer;
 }
-#emailNumbers
+.numbers
 {
-  position:absolute;
-  bottom:-15px;
-  margin-left:11%;
+  color:#6C7285;
+  font-size:1.65em;
+  float:right;
+  margin-right:57%;
 }
 
 .intro_wrapper
@@ -63,8 +62,6 @@ opacity:0.2;
 {
   background-color: #101526;
   display:flex;
-  border-bottom:2px solid;
-  border-color:#041122;
 }
 .menu_item
 {
@@ -102,6 +99,25 @@ a
   border:2px solid;
   border-color:#A1A1A1;
 }
+.fade
+{
+  background-color:#C0C2CB; 
+  color:#B7B6B6;
+  -webkit-transition:background 1s;
+  -moz-transition:background 1s;
+  -o-transition:background 1s;
+  transition:background 1s
+}
+.shown
+{
+  background-color:#101526; 
+  -webkit-transition:background 1s;
+  -moz-transition:background 1s;
+  -o-transition:background 1s;
+  transition:background 1s
+}
+
+}
 .area h1
 {
   margin:0;
@@ -137,15 +153,45 @@ a
 }
 .left_side_panel
 {
-  height:100%;
-  width:30%;
-  background-color:white;
+  height:auto;
+  width:28%;
   float:left;
-  position:fixed;
+  position: fixed;
+  z-index: 1;
+  margin-top:7%;
+  padding-top:5%;
+  padding-bottom:5%;
+  border-radius:11px;
+  background-color:#E7E7E6 !important;
+  border-radius: 8px;
+  border:2px solid;
+  border-color:#A1A1A1;
 }
 .left_side_panel h2
 {
-  text-align: center
+  text-align: center;
+  color:#363636;
+  border-bottom: 2px dashed;
+  border-color: #D7D7D7;
+  padding-bottom: 5px;
+}
+.left_side_panel p
+{  
+  text-align: center;
+  width:70%;
+  margin-left:13%;
+  margin-right:17%;
+  font-size:1.45em;
+  color:#B7B6B6;
+  border-bottom: 2px dashed;
+  border-color: #D7D7D7;
+  padding: 1%;
+  font-size:1.7em;
+}
+.deleteicon
+{
+  font-size:2.7em;
+  color:#626262;
 }
 .left_side_panel form
 {
@@ -153,14 +199,23 @@ a
   text-align: center;
   width:auto;
 }
-.left_side_panel form input
+.left_side_panel input
 {
-  padding:1.5%;
+  width:70%;
+  margin-left:19%;
+  margin-right:17%;
+  padding:3.5%;
   margin:1.2%;
+  border:none;
+  background-color: #DBDBDB;
+  border-radius: 4px;
 }
 .left_side_panel input[type="button"]
 {
-  width:87%;
+  border:none;
+  background-color: #DBDBDB;
+  color:#B7B6B6;
+  font-size:1.7em;
 }
 .quote
 {

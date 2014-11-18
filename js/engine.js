@@ -7,6 +7,7 @@
 		"<span id='#mailArea'>mail</span>",
 		"<span id='#entertainmentArea'>entertainment</span>",
 		"<span id='#workoutArea'>workout</span>",
+		"<span id='#learnArea'>learn</span>",
 	];
 
 	for (i = 0; i <= links.length - 1; i++)

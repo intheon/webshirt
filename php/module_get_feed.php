@@ -2,6 +2,9 @@
 // this will read xml and send it back to javascript
 // it takes an argument of a url of a valid site that serves xml
 // copyright 2014 intheon
+
+require "main_conf.php";
+
 $entries = array();
 $count = 0;
 

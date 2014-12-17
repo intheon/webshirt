@@ -184,19 +184,37 @@ $( document ).ready(function(){
 
 	});
 
-	$(".menu_panel span").click(function(event){
-		var amount = $(event.currentTarget.id).offset().top;
+	$(".menu_panel .menu_item").click(function(event){
+		var amount = $(event.currentTarget.childNodes[0].id).offset().top;
 			amount -= 150;
 			$("html, body").animate({
 				scrollTop: amount
 			},1000);
 	});
 
-
+// because i cant be arsed to find out if there's a callback
 setTimeout(function(){
 	var o = tasks.todo.length;
 	$("#todoNumbers").html(o)
 },100);
+
+// also want to make sure there's only one panel on the page at one time.
+
+setTimeout(function(){
+	var wow = $(".area:first-child").height();
+
+	if (wow >= 880)
+	{
+		$(".quote").addClass("trunc");
+	}
+	else if (wow <= 800)
+	{
+		$(".area:first-child").css("margin-bottom","8.5%");
+	}
+	console.log(wow);
+},1500);
+
+
 
 });
 

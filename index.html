@@ -1,118 +1,109 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-
-<title>EVERYBODY DO THE LIZARD</title>
-<link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-
-</head>
-
-<body>
-
-<!-- THIS IS ALWAYS FIXED -->
-<div id="navi">
-<div class="icon_wrapper">
-	<div class="icon_item" id="todo">
-		<img src="img/todo.png" width="28%">
-		<span id="todoNumbers" class="numbers">...</span>
-	</div>
-	<div class="icon_item">
-		<img src="img/mail.png" width="28%">
-		<span id="emailNumbers" class="numbers">...</span>
-	</div>
-</div>
-<div class="menu_panel"></div>
-</div>
-<!-- END FIXED -->
-
-<!-- SCROLLABLE SIDE PANEL --> 
-<div class="left_side_panel" style="display:none">
-	<h2>To Do</h2>
-	<div class="toDoList"></div>
-	<form name="addMore">
-		<input type="text" placeholder="Add More" id="addMoreText"/><br />
-		<input type="button" value="Submit" id="addMoreButton"/ >
-	</form>
-</div>
-<!-- END -->
-
-<div class="contentAreas">
-
-	<div id="homeArea" class="area">
-
-		<h1>Welcome home Ben<img src="img/guacamole.png" width="5%" class="smallico"></h1>
-		<p>Now you've probably had a hard days work, and will most probably want to chill the fuck out.<br /> Relax, put your feet up, put some music on and get a beer.</p>
-			<div class="quote" id="bash">
-				<h3>Random Bash Quote</h3>
-			</div>
-		<p>Why don't we take a look at where we left off</p>
-
-    <div id="login-container" class="pre-auth">
-      This application requires access to your YouTube account.
-      Please <a href="#" id="login-link">authorize</a> to continue.
-    </div>
-
-			<div class="panel">
-				<div id="lastYoutube">
-					<h2>Last YouTube Video</h2>
+	<head>
+		<title>EVERYBODY DO THE LIZARD</title>
+		<link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+	<body>
+		<!-- THIS IS ALWAYS FIXED -->
+		<div id="navi">
+			<div class="icon_wrapper">
+				<div class="icon_item" id="todo">
+					<img src="img/todo.png" width="28%">
+					<span id="todoNumbers" class="numbers">...</span>
+				</div>
+				<div class="icon_item">
+					<img src="img/mail.png" width="28%">
+					<span id="emailNumbers" class="numbers">...</span>
 				</div>
 			</div>
-			<div class="panel">
-				<h2>Last Stumble</h2>
+			<div class="menu_panel">
 			</div>
-			<div class="panel">
-				<h2>Last Visited</h2>
+		</div>
+		<!-- END FIXED -->
+		<!-- SCROLLABLE SIDE PANEL --> 
+		<div class="left_side_panel" style="display:none">
+			<h2>To Do</h2>
+			<div class="toDoList"></div>
+			<form name="addMore">
+				<input type="text" placeholder="Add More" id="addMoreText"/><br />
+				<input type="button" value="Submit" id="addMoreButton"/ >
+			</form>
+		</div>
+		<!-- END -->
+		<div class="contentAreas">
+			<div id="homeArea" class="area">
+				<h1>Welcome home Ben<img src="img/guacamole.png" width="5%" class="smallico"></h1>
+				<p>Now you've probably had a hard days work, and will most probably want to chill the fuck out.<br /> Relax, put your feet up, put some music on and get a beer.</p>
+				<div class="quote" id="bash">
+					<h3>Random Bash Quote</h3>
+				</div>
+				<p>Why don't we take a look at where we left off</p>
+				<div id="login-container" class="pre-auth">
+					This application requires access to your YouTube account.
+					Please <a href="#" id="login-link">authorize</a> to continue.
+				</div>
+				<div class="latest">
+					<div class="panel">
+						<div id="lastYoutube">
+							<h2>Last YouTube Video</h2>
+						</div>
+					</div>
+					<div class="panel">
+						<h2>Last Stumble</h2>
+					</div>
+					<div class="panel">
+						<h2>Last Visited</h2>
+					</div>
+				</div>
 			</div>
-
-
-	</div>
-
-
-	<div id="newsArea" class="area">
-		<h2>Here's the latest from the news dept.<img src="img/horseman.png" width="5%" class="smallico"></h2>
-		<div class="panel" id="gamespot">
-			<h2>Gamespot</h2>
+			<!-- END FIRST PANEL (HOME) -->
+			<div id="newsArea" class="area">
+				<h2>Here's the latest from the news dept.<img src="img/horseman.png" width="5%" class="smallico"></h2>
+				<div class="news_feeds">
+					<div class="panel" id="gamespot">
+						<h2>Gamespot</h2>
+					</div>
+					<div class="panel" id="bbc">
+						<h2>BBC</h2>
+					</div>
+					<div class="panel" id="slashdot">
+						<h2>Slashdot</h2>
+					</div>
+					<div class="panel" id="reddit">
+						<h2>Reddit</h2>
+					</div>
+					<div class="panel" id="???">
+						<h2>???</h2>
+					</div>
+					<div class="panel" id="???">
+						<h2>???</h2>
+					</div>
+				</div>
+			</div>
+			<div id="mailArea" class="area">
+				wow mail
+			</div>
+			<div id="entertainmentArea" class="area">
+				wow entertainment
+			</div>
+			<div id="learnArea" class="area">
+				<div class="panel" id="codeplayer">
+					<h2>http://thecodeplayer.com/</h2>
+				</div>
+				<div class="panel" id="codecademy">
+					<h2>http://codecademy.com/</h2>
+				</div>
+				<div class="panel" id="treehouse">
+					<h2>http://treehouse.com/</h2>
+				</div>
+			</div>
 		</div>
-		<div class="panel" id="bbc">
-			<h2>BBC</h2>
-		</div>
-		<div class="panel" id="slashdot">
-			<h2>Slashdot</h2>
-		</div>
-	</div>
-
-	<div id="mailArea" class="area">
-		wow mail
-	</div>
-
-	<div id="entertainmentArea" class="area">
-		wow entertainment
-	</div>
-
-	<div id="learnArea" class="area">
-
-		<div class="panel" id="codeplayer">
-			<h2>http://thecodeplayer.com/</h2>
-		</div>
-		<div class="panel" id="codecademy">
-			<h2>http://codecademy.com/</h2>
-		</div>
-		<div class="panel" id="treehouse">
-			<h2>http://treehouse.com/</h2>
-		</div>
-
-	</div>
-
-</div>
-
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/yt_history.js"></script>
-<script type="text/javascript" src="js/yt_auth.js"></script>
-<script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
-<script type="text/javascript" src="js/engine.js"></script>
-
-
-</body>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/yt_history.js"></script>
+		<script type="text/javascript" src="js/yt_auth.js"></script>
+		<script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+		<script type="text/javascript" src="js/engine.js"></script>
+	</body>
 </html>

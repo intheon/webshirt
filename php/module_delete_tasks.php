@@ -1,11 +1,7 @@
 <?php
 // get all the tasks in the db
 
-$host = 'localhost';
-$db = 'todo';
-$usr = 'root';
-$pw = '';
-
+require "main_conf.php";
 
 if (isset($_POST['idToDelete']))
 {

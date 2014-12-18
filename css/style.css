@@ -24,6 +24,7 @@ h1,h2,h3,p
 	margin-top:     		-36px;
 }
 
+
 .footer
 {
 	opacity:				0.2;
@@ -273,6 +274,12 @@ a
 	flex-direction:			row;
 	flex-wrap:				wrap;
 }
+
+#newsArea
+{
+	margin-bottom:4%;
+}
+
 
 .news_feeds .panel
 {

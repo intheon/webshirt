@@ -14,6 +14,9 @@
 	{
 		$(".menu_panel").append("<div class='menu_item'>" + links[i] + "</div>");
 	}
+
+	//var rootDir = "http://localhost/webshirt/";
+	var rootDir = "http://intheon.xyz/liv/";
 // the above just dynamically adds in links 
 // because i cant be bothered to hard code them
 
@@ -42,7 +45,7 @@
 	function getFeed(websiteUrl,tag,limit)
 	{
 		$.ajax({
-			url: "http://localhost/webshirt/php/module_get_feed.php",
+			url: rootDir + "php/module_get_feed.php",
 			type: "POST",
 			data: {
 				website: websiteUrl,
@@ -76,7 +79,7 @@
 	function getTasks()
 	{
 		$.ajax({
-			url: "http://localhost/webshirt/php/module_pull_tasks.php",
+			url: rootDir + "php/module_pull_tasks.php",
 			type: "GET",
 			success: function(response)
 			{
@@ -125,7 +128,7 @@
 	function createTask(newText)
 	{
 		$.ajax({
-			url: "http://localhost/webshirt/php/module_push_tasks.php",
+			url: rootDir + "php/module_push_tasks.php",
 			type: "POST",
 			data: {
 				taskText: newText
@@ -143,7 +146,7 @@
 		var stripped = id.substr(4,id.length);
 
 		$.ajax({
-			url: "http://localhost/webshirt/php/module_delete_tasks.php",
+			url: rootDir + "php/module_delete_tasks.php",
 			type: "POST",
 			data: { 
 				idToDelete: stripped

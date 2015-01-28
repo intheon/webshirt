@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>EVERYBODY DO THE LIZARD</title>
-	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<meta charset="utf-8">
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 	</head>
 	<body>
@@ -10,11 +11,11 @@
 		<div id="navi">
 			<div class="icon_wrapper">
 				<div class="icon_item" id="todo">
-					<img src="img/todo.png" width="28%">
+					<img src="img/todo.png" width="18%">
 					<span id="todoNumbers" class="numbers">...</span>
 				</div>
 				<div class="icon_item">
-					<img src="img/mail.png" width="28%">
+					<img src="img/mail.png" width="18%">
 					<span id="emailNumbers" class="numbers">...</span>
 				</div>
 			</div>
@@ -43,36 +44,57 @@
 
 				<div class="flex_panels">
 
-					<div class="diet column" id="diet">
-						<h3>Diet ideas for MONDAY</h3>
-
-							<div class="group">
-								<div class="header"><h4>Breakfast</h4></div>
-								<div class="items">
-									<h5>Toast</h5>
-									<h5>Chips</h5>
-								</div>
-							</div>
-
-							<div class="group">
-								<div class="header"><h4>Dinner</h4></div>
-								<div class="items">
-									<h5>Chicken</h5>
-									<h5>Soap</h5>
-								</div>
-							</div>
-					</div>
-
 					<div class="column quote" id="bash">
 						<h3>Random Bash Quote</h3>
 					</div>
 
+					<div class="column projects" id="projects">
+						<h3>Current Projects</h3>
+
+						<div class="group">
+							<div class="header"><h4>Ed Website</h4></div>
+							<div class="items"><h5>Ed needs a new website, and I need £200.</h5></div>
+						</div>
+
+						<div class="group">
+							<div class="header"><h4>Javascript</h4></div>
+							<div class="items"><h5>You need practice with Angular, Backbone, and whatever other frameworks are out there.</h5></div>
+						</div>
+
+						<div class="group">
+							<div class="header"><h4>Operation: London</h4></div>
+							<div class="items"><h5>You're moving London dude, you need to find a house.</h5></div>
+						</div>
+
+						<div class="group">
+							<div class="header"><h4>Workout, Homepage, Portfolio</h4></div>
+							<div class="items"><h5>The first two need formally launching. The other one definitely needs doing.</h5></div>
+						</div>
+					</div>
+
+										<div class="diet column" id="diet">
+						<h3>Diet ideas for MONDAY</h3>
+
+						<div class="group">
+							<div class="header"><h4>Breakfast</h4></div>
+							<div class="items">
+								<h5>Toast</h5>
+								<h5>Chips</h5>
+							</div>
+						</div>
+
+						<div class="group">
+							<div class="header"><h4>Dinner</h4></div>
+							<div class="items">
+								<h5>Chicken</h5>
+								<h5>Soap</h5>
+							</div>
+						</div>
+
+					</div>
+
 				</div>
-				<p>Why don't we take a look at where we left off</p>
-				<div id="login-container" class="pre-auth">
-					This application requires access to your YouTube account.
-					Please <a href="#" id="login-link">authorize</a> to continue.
-				</div>
+
 				<div class="flex_panels">
 					<div class="panel">
 						<div id="lastYoutube">
@@ -85,6 +107,10 @@
 					<div class="panel">
 						<h2>Last Visited</h2>
 					</div>
+				</div>
+				<div id="login-container" class="pre-auth">
+					This application requires access to your YouTube account.
+					Please <a href="#" id="login-link">authorize</a> to continue.
 				</div>
 			</div>
 			<!-- END FIRST PANEL (HOME) -->

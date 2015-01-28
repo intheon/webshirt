@@ -1,6 +1,6 @@
 body
 {
-	font-family: 			'Titillium Web', sans-serif;
+	font-family: 			'Mallanna', sans-serif;
 	background-image: 		url(../img/sky.jpg);
 	background-position:	right top;
 	background-attachment: 	fixed;
@@ -120,33 +120,67 @@ a
 	-o-transition:			background 1s;
 	transition:				background 1s
 }
-
 }
 .area h1
 {
-	margin:					0;
 	color:					#535268;
 	font-weight:			normal;
-	margin-bottom:			3%;
+	padding-bottom:			1%;
+	margin-top:				1%;
 }
 .area h2
 {
-	font-size:				1.15em;
-	text-align: 			center;
+	font-size:				1.25em;
 	color:					#30426E;
+	margin-bottom:			1%;
+	margin-left:			1%;
 }
 .area p
 {
-	font-size:				1.05em;
-	margin-top:				2%;
-	margin-bottom:			2%;
+	font-size:				1.15em;
+	margin-top:				1%;
+	margin-bottom:			1%;
 	line-height:			26px;
 }
-.latest
+.flex_panels
 {
 	display:				flex;
 	flex-direction:			row;
 
+}
+.group
+{
+
+	float:					left;
+	width:					100%;
+}
+.header
+{
+	float:					left;
+	width:					50%;
+}
+.items
+{
+	float:					left;
+	width:					50%;
+}
+.items *
+{
+	margin:					0px;
+	padding:				0px;
+}
+
+
+.column
+{
+	padding:				2%;
+	background:				url(../img/area_bg.png) top center;
+	background-size:		cover;
+	border-radius: 			8px;
+	border: 				1px dashed;
+	border-color:			#E5E5E5;
+	line-height:			22px;
+	margin-right:			2%;
 }
 .panel
 {
@@ -155,7 +189,6 @@ a
 	background:				url(../img/area_bg.png) top center;
 	background-size:		cover;
 	margin-right:			1%;
-	padding-right:			2%;
 	width:					30%;
 }
 .panel p
@@ -163,13 +196,6 @@ a
 	padding:				0%;
 	margin-bottom:			0.3%;
 	font-size:				1em;
-}
-.panel *
-{
-	margin-left:			1%;
-	margin-right:			1%;
-	padding-left:			1%;
-	padding-right:			1%;
 }
 .left_side_panel
 {
@@ -245,16 +271,18 @@ a
 {
 	font-size:				0.87em;
 	font-family:     		"Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", monospace;
-	padding:				2%;
-	width:					auto;
-	background:				url(../img/area_bg.png) top center;
-	background-size:		cover;
-	border-radius: 			8px;
-	border: 				1px dashed;
-	border-color:			#E5E5E5;
-	line-height:			22px;
 }
 .quote h3
+{
+	color:					#C08000;
+	font-weight:			none;
+	font-size:				1.05em;
+}
+.diet
+{
+	min-width:				15%;
+}
+.diet h3
 {
 	color:					#C08000;
 	font-weight:			none;

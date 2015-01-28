@@ -15,8 +15,8 @@
 		$(".menu_panel").append("<div class='menu_item'>" + links[i] + "</div>");
 	}
 
-	//var rootDir = "http://localhost/webshirt/";
-	var rootDir = "http://intheon.xyz/liv/";
+	var rootDir = "http://localhost/webshirt/";
+	//var rootDir = "http://intheon.xyz/liv/";
 // the above just dynamically adds in links 
 // because i cant be bothered to hard code them
 

@@ -159,6 +159,8 @@
 // INITIALISATION
 // **************
 $( document ).ready(function(){
+
+
 	getFeed("http://www.gamespot.com/feeds/reviews/","gamespot",6);
 	getFeed("http://feeds.bbci.co.uk/news/technology/rss.xml","bbc",7);
 	getFeed("http://feeds.sydv.net/latest-bash-quotes","bash",1);
@@ -203,6 +205,8 @@ setTimeout(function(){
 
 // also want to make sure there's only one panel on the page at one time.
 
+var current;
+
 setTimeout(function(){
 	var wow = $(".area:first-child").height();
 
@@ -217,10 +221,7 @@ setTimeout(function(){
 	console.log(wow);
 },1500);
 
-
-
 });
-
 
 
 

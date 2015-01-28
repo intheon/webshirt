@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	div {
+    border: 1px solid black;
+    height: 50px;
+}
+
+div.current {
+    background-color: orange;
+}
+</style>
+<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<body>
+<div class="current">1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+<div>5</div>
+<div>6</div>
+<div>7</div>
+<div>8</div>
+<div>9</div>
+<div>10</div>
+<div>11</div>
+<div>12</div>
+<div>13</div>
+<div>14</div>
+<div>15</div>
+<div>16</div>
+<div>17</div>
+<div>18</div>
+<div>19</div>
+<div>20</div>
+
+<script type="text/javascript">
+
+var current;
+
+$(function() {          
+    $('body').mousewheel(function(event, delta) {
+        var $current = $('div.current');
+        
+        console.log(delta);
+        console.log($current);
+                
+        if (delta > 0) {
+            $prev = $current.prev();
+            
+            if ($prev.length) {
+                $('body').scrollTo($prev, 100);
+                $current.removeClass('current');
+                $prev.addClass('current');
+            }
+        } else {
+            $next = $current.next();
+            
+            if ($next.length) {
+                $('body').scrollTo($next, 100);
+                $current.removeClass('current');
+                $next.addClass('current');
+            }
+        }
+                                         
+        event.preventDefault();
+    });
+});</script>
+</body>
+</html>

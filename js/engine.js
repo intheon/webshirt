@@ -297,13 +297,11 @@ $( document ).ready(function(){
 	$("#todo").click(function(){
   		if ($(".left_side_panel").is(":hidden")) 
   		{
-     		console.log("showing");
      		$(".menu_panel").addClass("fade");
      		$(".menu_panel").removeClass("shown");
   		} 
   		else 
   		{
-     		console.log("hidden");
      		$(".menu_panel").removeClass("fade");
      		$(".menu_panel").addClass("shown");
      	}

@@ -84,13 +84,13 @@ a
 }
 .area
 {
-	margin-left:			21%;
+	margin-left:			20%;
 	margin-right:			3%;
 	margin-top:				3%;
 	padding-left:			1em;
 	padding-right:			1em;
 	float:					left;
-	width:					76%;
+	width:					78%;
 	color:					black;
 	background:				url(../img/area_bg.png) top center;
 	background-size:		cover;
@@ -174,7 +174,6 @@ a
 	background:				url(../img/area_bg.png) top center;
 	background-size:		cover;
 	margin-right:			1%;
-	margin-left:			1%;
 	margin-bottom:			1%;
 	padding:				1%;
 }

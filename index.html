@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>EVERYBODY DO THE LIZARD</title>
-		<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 	</head>
@@ -38,75 +38,85 @@
 			<!-- THE FIRST PANEL -->
 			<div id="homeArea" class="area current">
 
-				<h1>Welcome home Ben<img src="img/guacamole.png" width="4%" class="smallico"></h1>
-
-				<p>Now you've probably had a hard days work, and will most probably want to chill the fuck out.<br /> Relax, put your feet up, put some music on and get a beer.</p>
-
-				<div class="flex_panels">
-
-					<div class="column quote" id="bash">
-						<h3>Random Bash Quote</h3>
-					</div>
-
-					<div class="column projects" id="projects">
-						<h3>Current Projects</h3>
-
-						<div class="group">
-							<div class="header"><h4>Ed Website</h4></div>
-							<div class="items"><h5>Ed needs a new website, and I need £200.</h5></div>
-						</div>
-
-						<div class="group">
-							<div class="header"><h4>Javascript</h4></div>
-							<div class="items"><h5>You need practice with Angular, Backbone, and whatever other frameworks are out there.</h5></div>
-						</div>
-
-						<div class="group">
-							<div class="header"><h4>Operation: London</h4></div>
-							<div class="items"><h5>You're moving London dude, you need to find a house.</h5></div>
-						</div>
-
-						<div class="group">
-							<div class="header"><h4>Workout, Homepage, Portfolio</h4></div>
-							<div class="items"><h5>The first two need formally launching. The other one definitely needs doing.</h5></div>
-						</div>
-					</div>
-
-										<div class="diet column" id="diet">
-						<h3>Diet ideas for MONDAY</h3>
-
-						<div class="group">
-							<div class="header"><h4>Breakfast</h4></div>
-							<div class="items">
-								<h5>Toast</h5>
-								<h5>Chips</h5>
-							</div>
-						</div>
-
-						<div class="group">
-							<div class="header"><h4>Dinner</h4></div>
-							<div class="items">
-								<h5>Chicken</h5>
-								<h5>Soap</h5>
-							</div>
-						</div>
-
-					</div>
-
+				<div class="text_welcone">
+					<h1>Welcome home Ben<img src="img/guacamole.png" width="4%" class="smallico"></h1>
+					<p>Now you've probably had a hard days work, and will most probably want to chill the fuck out.<br /> Relax, put your feet up, put some music on and get a beer.</p>
 				</div>
+				<!-- nice, flexible modules which can be added -->
+				<!-- each 'panel' class creates a sub module -->
 
 				<div class="flex_panels">
+
+					<div class="panel half">
+						<div class="quote" id="bash">
+							<h3>Random Bash Quote</h3>
+						</div>
+					</div>
+
+					<div class="panel">
+						<div class="diet" id="diet">
+							<h3>Diet ideas for MONDAY</h3>
+							<div class="group">
+								<div class="header"><h4>Breakfast</h4></div>
+								<div class="items">
+									<h5>Toast</h5>
+									<h5>Chips</h5>
+								</div>
+							</div>
+							<div class="group">
+								<div class="header"><h4>Dinner</h4></div>
+								<div class="items">
+									<h5>Chicken</h5>
+									<h5>Soap</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel">
+						<div id="money">
+							<h3>Money</h3>
+
+							<!--
+							<div class="money_start_amount"><span>Initial:</span>£1230</div>
+							<div class="money_out"><span>Out:</span> £653 <a href="#" class="addDebt">(+)</a></div>
+							<div class="money_remaining"><span>Remains:</span> £577</div>
+							-->
+						</div>
+					</div>
+	
 					<div class="panel">
 						<div id="lastYoutube">
-							<h2>Last YouTube Video</h2>
+							<h3>Last YouTube Video</h3>
 						</div>
 					</div>
+
 					<div class="panel">
-						<h2>Last Stumble</h2>
+						<div class="projects" id="projects">
+							<h3>Current Projects</h3>
+							<div class="group">
+								<div class="header"><h4>Ed Website</h4></div>
+								<div class="items"><h5>Ed needs a new website, and I need £200.</h5></div>
+							</div>
+							<div class="group">
+								<div class="header"><h4>Javascript</h4></div>
+								<div class="items"><h5>You need practice with Angular, Backbone, and whatever other frameworks are out there.</h5></div>
+							</div>
+							<div class="group">
+								<div class="header"><h4>Operation: London</h4></div>
+								<div class="items"><h5>You're moving London dude, you need to find a house.</h5></div>
+							</div>
+							<div class="group">
+								<div class="header"><h4>Workout, Homepage, Portfolio</h4></div>
+								<div class="items"><h5>The first two need formally launching. The other one definitely needs doing.</h5></div>
+							</div>
+						</div>
 					</div>
+
 					<div class="panel">
-						<h2>Last Visited</h2>
+						<h3>Last Stumble</h3>
 					</div>
+
 				</div>
 				<div id="login-container" class="pre-auth">
 					This application requires access to your YouTube account.

@@ -144,54 +144,47 @@ a
 .flex_panels
 {
 	display:				flex;
+	flex-wrap:				wrap;
 	flex-direction:			row;
 	margin-bottom:			2%;
 
 }
 .group
 {
-
-	float:					left;
-	width:					100%;
+	display:				flex;
 }
 .header
 {
-	float:					left;
-	width:					40%;
-	padding-right:			2%;
+	min-width:45%;
 }
 .items
 {
-	float:					left;
-	width:					50%;
-	margin-top:				3%;
+	max-width:40%;
 }
-.items *
+.header h4,h5
 {
-	margin:					0px;
-	padding:				0px;
+	margin:0px;
+	padding:0px;
+	margin-bottom:1.5%;
 }
 
-
-.column
-{
-	padding:				2%;
-	background:				url(../img/area_bg.png) top center;
-	background-size:		cover;
-	border-radius: 			8px;
-	border: 				1px dashed;
-	border-color:			#E5E5E5;
-	line-height:			22px;
-	margin-right:			2%;
-}
 .panel
 {
-    border-top-left-radius: 8px;
-    border-top-right-radius:8px;
+    border-radius: 			8px;
 	background:				url(../img/area_bg.png) top center;
 	background-size:		cover;
 	margin-right:			1%;
-	width:					30%;
+	margin-left:			1%;
+	margin-bottom:			1%;
+	padding:				1%;
+}
+.half
+{
+	max-width:45%;
+}
+.third
+{
+	max-width:33%;
 }
 .panel p
 {
@@ -283,20 +276,6 @@ a
 .quote p
 {
 	font-size:				1em;
-}
-.projects
-{
-	width:					40%;
-}
-.diet
-{
-	min-width:				15%;
-}
-.diet h3
-{
-	color:					#C08000;
-	font-weight:			none;
-	font-size:				1.05em;
 }
 #navi
 {

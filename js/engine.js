@@ -17,8 +17,8 @@
 
 	var rootDir = "http://localhost/webshirt/";
 	//var rootDir = "http://intheon.xyz/liv/";
-// the above just dynamically adds in links 
-// because i cant be bothered to hard code them
+	// the above just dynamically adds in links 
+	// because i cant be bothered to hard code them
 
 	function detectChanges(changes)
 	{
@@ -154,6 +154,128 @@
 		});
 	}
 
+// **************
+// MONEY CALCULATOR MODEL
+// **************
+	function addDebt()
+	{
+		var local = pullFromLocalStorage();
+
+		if (!local)
+		{
+			// this is the block to handle a new user
+
+			// draw an initial blank form
+			$("#money").html("\
+				<h3>Edit</h3>\
+				<form name='money_form' id='money_form'>\
+					<span>Monthly Pay</span>\
+					<input type='text' placeholder='monthly pay' id='monthly_pay' name='monthly_pay'/>\
+					<h3>Bills</h3>\
+					<div class='money_inputs'>\
+					<input type='text' placeholder='bill name' name='name' class='bill_name_label'/>\
+					<input type='text' placeholder='amount here' name='value'/>\
+					</div>\
+					<input type='button' value='add more' id='bill_add'  />\
+					<input type='button' value='submit' id='bill_submit'  />\
+				</form>");
+
+			// enable the user to add more if they wish
+			$("#bill_add").click(function(){
+				$(".money_inputs").append("\
+					<input type='text' placeholder='bill name' name='name' class='bill_name_label'/>\
+					<input type='text' placeholder='amount here' name='value'/>");
+			});
+
+			// register a handler to send it off to localstorage
+			$("#bill_submit").click(function(){
+				var formData = $("#money form").serializeArray();
+				localStorage.setItem("bills",JSON.stringify(formData));
+			});
+
+			/*
+			var parsed = JSON.parse(local);
+			var basePay = parsed[0].value;
+
+			console.log(parsed);
+
+			*/
+		}
+		else
+		{	
+			// this block handles existing users
+
+				// our ls object as a json string
+				var parsed = JSON.parse(local);
+
+				// how much i earn a month
+				var base = parsed[0].value;
+
+				// get rid of the first property, dont need it
+				delete parsed[0];
+
+				// loop through 
+					console.log("this is working?");
+				var htmlString = "";
+
+				for (i in parsed)
+				{
+
+					console.log(parsed[i].name);
+					if (parsed[i].name == "name")
+					{
+						htmlString += "<input type='text' value='"+parsed[i].value+"' name='name' class='bill_name_label' />";
+					}
+					else if (parsed[i].name == "value")
+					{
+						htmlString +="<input type='text' value='"+parsed[i].value+"' name='value' />";
+					}
+				}
+			
+			$("#money").html("<h3>Edit</h3>\
+			<form name='money_form' id='money_form'>\
+				<span>Monthly Pay</span>\
+				<input type='text' placeholder='monthly pay' id='monthly_pay' name='monthly_pay' value='"+base+"'/>\
+				<h3>Bills</h3>\
+				<div class='money_inputs'>"+htmlString+"</div>\
+				<input type='button' value='add more' id='bill_add'  />\
+				<input type='button' value='submit' id='bill_submit'  />\
+			</form>\
+			");
+
+			// enable the user to add more if they wish
+			$("#bill_add").click(function(){
+				$(".money_inputs").append("\
+					<input type='text' placeholder='bill name' name='name' class='bill_name_label'/>\
+					<input type='text' placeholder='amount here' name='value'/>");
+			});
+
+			// takes the value and overwrites the value in localstorage
+			$("#bill_submit").click(function(){
+				var formData = $("#money form").serializeArray();
+				localStorage.setItem("bills",JSON.stringify(formData));
+			});
+
+		}
+
+
+	}
+
+	function pullFromLocalStorage()
+	{
+		var bills = localStorage.getItem("bills");
+
+		if (!bills)
+		{
+			return false;
+		}
+		else
+		{
+			return bills;
+		}
+
+	}
+
 
 // **************
 // INITIALISATION
@@ -197,6 +319,39 @@ $( document ).ready(function(){
 			},1000);
 	});
 
+	if (!pullFromLocalStorage())
+	{
+		$("#money").append("Localstorage is empty. <a href='#' class='addDebt'>Add some items</a>")
+	}
+	else
+	{
+		var current = JSON.parse(pullFromLocalStorage());
+		var base = parseInt(current[0].value);
+		var running = 0;
+
+		delete current[0];
+
+		for (i in current)
+		{
+			if (current[i].name == "value")
+			{
+				running += parseInt(current[i].value);
+			}
+		}
+
+		var remains = base - running;
+
+		$("#money").append("<div class='money_start_amount'><span>Initial: </span><span class='money_number'>&#163;"+base+"</span></div>");
+		$("#money").append("<div class='money_out'><span>Out: </span><span class='money_number'>&#163;"+running+"</span><a href='#' class='addDebt'>(+)</a></div>");
+		$("#money").append("<div class='money_remaining'><span>Remains: </span><span class='money_number'>&#163;"+remains+"</span></div>");
+
+	}
+
+
+	$(".addDebt").click(function(){
+		addDebt();
+	});
+
 // because i cant be arsed to find out if there's a callback
 setTimeout(function(){
 	var o = tasks.todo.length;
@@ -218,11 +373,10 @@ setTimeout(function(){
 	{
 		$(".area:first-child").css("margin-bottom","8.5%");
 	}
-	console.log(wow);
 },1500);
 
 });
 
-
+//localStorage.removeItem("bills");
 
 

@@ -54,7 +54,7 @@
 			},
 			success: function(response)
 			{
-				//console.log(response);
+				console.log(response);
 				xmlResponses[tag] = response
 			}
 		});
@@ -286,6 +286,12 @@ $( document ).ready(function(){
 	getFeed("http://www.gamespot.com/feeds/reviews/","gamespot",6);
 	getFeed("http://feeds.bbci.co.uk/news/technology/rss.xml","bbc",7);
 	getFeed("http://feeds.sydv.net/latest-bash-quotes","bash",1);
+	getFeed("http://www.reddit.com/r/skateboarding/.rss","reddit",5);
+	getFeed("http://clientsfromhell.tumblr.com/rss","slashdot",5);
+
+
+
+
 	
 	getTasks();
 

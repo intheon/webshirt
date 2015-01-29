@@ -337,11 +337,15 @@ $( document ).ready(function(){
 			}
 		}
 
-		var remains = base - running;
+		var month = base - running;
+		var week = month / 4;
+		var day = Math.round(week / 7);
 
 		$("#money").append("<div class='money_start_amount'><span>Initial: </span><span class='money_number'>&#163;"+base+"</span></div>");
 		$("#money").append("<div class='money_out'><span>Out: </span><span class='money_number'>&#163;"+running+"</span><a href='#' class='addDebt'>(+)</a></div>");
-		$("#money").append("<div class='money_remaining'><span>Remains: </span><span class='money_number'>&#163;"+remains+"</span></div>");
+		$("#money").append("<div class='money_remaining'><span>Month: </span><span class='money_number'>&#163;"+month+"</span></div>");
+		$("#money").append("<div class='money_remaining'><span>Week: </span><span class='money_number'>&#163;"+week+"</span></div>");
+		$("#money").append("<div class='money_remaining'><span>Day: </span><span class='money_number'>&#163;"+day+"</span></div>");
 
 	}
 
